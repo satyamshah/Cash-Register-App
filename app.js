@@ -10,7 +10,7 @@ checkButton.addEventListener("click",function validateAmount(){
     hideMessage();
     if(totalBillAmount.value>0)
     {
-        if(cashGiven.value>0 && cashGiven.value>=totalBillAmount.value)
+        if(parseInt(cashGiven.value)>0 && parseInt(cashGiven.value)>=parseInt(totalBillAmount.value))
         {
             const amountToBeReturned = cashGiven.value - totalBillAmount.value; 
         calculateChange(amountToBeReturned);
