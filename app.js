@@ -10,13 +10,21 @@ checkButton.addEventListener("click",function validateAmount(){
     hideMessage();
     if(totalBillAmount.value>0)
     {
-        if(parseInt(cashGiven.value)>0 && parseInt(cashGiven.value)>=parseInt(totalBillAmount.value))
+      if(parseInt(cashGiven.value)==parseInt(totalBillAmount.value))
+      {
+        showMessage("Bill has been paid")
+      }
+      else
+      {
+        if(parseInt(cashGiven.value)>0 && parseInt(cashGiven.value)>parseInt(totalBillAmount.value))
         {
             const amountToBeReturned = cashGiven.value - totalBillAmount.value; 
         calculateChange(amountToBeReturned);
         }
         else
         showMessage("you need to pay more. Please add more cash !")
+      }
+        
     }
     else 
     showMessage("Invalid Bill Amount. Please add a valid bill Amount");
